@@ -1,0 +1,257 @@
+
+
+/*--------Estilos contenedor formulario -----------*/
+.container-home{
+    min-width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns:auto;
+}
+
+.container-home .home {
+    margin-top: 60px;
+    margin-left: 40px;
+}
+
+.container-home .home .fas{
+    font-size: 1.2rem;
+    color: gray;
+    border: 1px solid gray;
+}
+
+
+/* =========== Estilos a la parte de la imagen de perfil =========*/
+.pruebasssss{
+    width: 400px;
+    height: 250px;
+    background-color: brown;
+    text-align: center;
+    margin-left: 700px;
+    
+}
+.subirperfil{
+    display: block;
+}
+.home .container-perfil{
+    display: flex;
+    justify-content: center;
+    background-color: #f1eeee;
+    box-shadow: 0 0 0 2px gray;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 250px;
+    margin-bottom: 30px;
+    background-color: rgb(114, 113, 114);
+    
+   
+    
+}
+.container-perfil{
+   float: inline-end;
+}
+.container-perfil .linea{
+    width: 60%;
+    border: 1px solid rgb(251, 251, 251);
+    position: absolute;
+    
+    margin-top: 5%;
+    
+    
+ 
+}
+.img-perfil>img{
+   
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    opacity: 0.9;
+    
+   
+
+}
+.img-perfil:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+.img-perfill>img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    opacity: 0.9;
+    text-align: center;
+   
+}
+.subirpic{
+    height: 100px;
+    width: 100px;
+}
+.subirpic:hover{
+    opacity: 0.6;
+    text-decoration: none;
+
+}
+.conperfil{
+    float: left;
+    height: 150px;
+    width: 300px;
+   
+}
+.sub_img{
+     margin-left: 2000px;
+    height: 120px;
+    width: 200px;
+}
+
+.conte-input-subir{
+    width: 30%;
+    text-align: center;
+    height: 100px;
+    background-color: darkgreen;
+  
+    ;
+}
+
+.img-perfil #titulo-foto{
+    color: white;
+    font-size: 1.2rem;
+    position: relative;
+    
+    background-color:rgba(21,21,21,0.7);
+    width: 200px;
+    height: 100px;
+    border-radius: 0px 0px 100px 100px;
+    opacity: 0;
+    cursor: pointer;
+
+
+}
+.img-perfil #titulo-foto:hover,#imgperfil:hover{
+    transition: ease-in-out .3s;
+    opacity: 1;
+}
+.img-perfil #imagen {
+    display: none;
+}
+
+/* ======== Estilos al formulario =====*/
+
+
+.datos-form{
+
+    margin-bottom: 30px;
+    background-color: #f1eeee;
+    box-shadow: 0 0 0 2px gray;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+.container-titulo-cv{
+    margin-bottom: 40px;
+}
+.titulo-cv{
+    padding: 10px 0 10px 0;
+    text-decoration: underline;
+    text-align: center;
+}
+.titulo-cv h2>input{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #696666;
+    text-align: center;
+}
+.titulo-cv .text-area{
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.titulo-cv #salarioDeseado{
+    border: none;
+    margin-right: 5px;
+    text-align: center;
+}
+
+
+.container-button{
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+.container-button button{
+    height: 40px;
+}
+
+
+
+
+.faMas{
+    border: none;
+}
+.fa-plus-circle{
+    display: flex;
+    border: none!important;
+    justify-content: center;
+}
+#fa-plus-circle .fa-plus-circle:hover{
+    color: rgb(7, 7, 6);
+    cursor: pointer;
+}
+
+.container-button {
+    text-align: center;
+}
+
+.datos-form{
+    width: 90%;
+    margin: 0 auto;
+    color: rgb(182, 181, 180);
+}
+.datos-form .cabecera {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: rgba(21,21,21,0.7);
+}
+.fas-icon{
+    display: inline;
+    align-self: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.fas-icon i{
+    border: none!important;
+    color: rgb(0, 0, 0)!important;
+}
+.fas-icon i:hover{
+    transition: .3s ease-in;
+    font-size: 2rem;
+    color: rgb(255, 255, 255)!important;
+    cursor: pointer;
+}
+
+.GuardarCv{
+ text-align: center;
+ height:80px;
+ width: 100%;
+
+}
+.botonCV{
+    text-decoration: none;
+    padding-top: 5px;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: #414141;
+    background-color: #a7a7a7;
+    border-radius: 15px;
+    border: 3px double #f0f3f0;
+  }
+  .botonCV:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }

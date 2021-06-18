@@ -1,0 +1,88 @@
+/*======================================Estilos al CV ====================*/
+/*Estilos al header del cv*/
+*{
+    font-size: 15px!important;
+}
+.perfilCV{
+margin-top: 30px;
+   text-align: center;
+}
+.perfilCV .foto-perfil >img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    
+}
+.perfilCV hr {
+    width: 60%;
+}
+
+.text-area{
+    width: 80%;
+    margin: 0 auto;
+}
+/* Fin header */
+
+/*=====================*/
+
+/*Estilos Datos personales*/
+
+.datos-personalesCV, .datos-escolaresCV, .datos-laboralesCV, .datos-complementariosCV{
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+.datos-personalesCV table {
+    width: 100%;
+    margin-left: 12%;
+    
+}
+
+/* Fin estilos datos personales */
+
+/*===========================*/
+
+/*Inicio estilos datos escolares */
+.datos-escolaresCV .estudios  {
+    margin-left: 12%;
+}
+.fa-graduation-cap{
+    font-size: 19px!important;
+}
+.datos-escolaresCV .carrera{
+    color: red;
+}
+/* Fin estilos datos Escolares */
+
+/*===========================*/
+
+/*Inicio estilos datos-laborales */
+
+.datos-laboralesCV .trabajos{
+    margin-left: 12%;
+}
+/* Fin estilos datos Laborales */
+
+/*===========================*/
+
+/*Inicio estilos datos-Complementarios */
+
+.datos-complementariosCV .complementario{
+    margin-left: 12%;
+}
+/*fin estilos datos-Complementarios */
+/*Inicio clase- beneficios */
+.beneficios{
+    margin-bottom:10px ;
+    width: 14px;
+      height: 14px;
+}
+/*Inicio clase beneficios */
+
+.alto{
+    margin-top: 4px;
+}

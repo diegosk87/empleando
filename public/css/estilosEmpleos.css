@@ -1,0 +1,39 @@
+.container{
+    min-width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-image: url("../images/hero_1.jpg");
+    max-height: 300px!important;
+    border: 2px solid #ccc;
+}
+.container .search-jobs-form{
+    padding-top: 40px;
+}
+
+.resultados-busqueda{
+    width: 80%;
+    margin: 0 auto;
+}
+.resultados-busqueda .card{
+    margin-bottom: 30px;
+}
+
+/* Estilos a postulaciones de empleo */
+
+.mis-postulaciones{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.mis-postulaciones .table .status{
+    background-color: red;
+}
+.mis-postulaciones .table .status2{
+    background-color: rgb(22, 231, 22);
+}
+
+.publicacion_titulo{
+    color: rgb(3, 3, 3);
+}
+
