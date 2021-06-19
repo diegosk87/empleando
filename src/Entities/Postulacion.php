@@ -5,7 +5,7 @@ namespace App\Entities;
 use Illuminate\Database\Eloquent\Model;
 
 class Postulacion extends Model {
-    protected $table = 'postulacion';
+    protected $table = 'postulaciones';
     protected $primaryKey = 'Id_Postulacion';
 
     protected $fillable = [
