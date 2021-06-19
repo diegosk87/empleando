@@ -17,4 +17,9 @@ class Postulacion extends Model {
     ];
 
     public $timestamps = false;
+
+    public function vacante()
+    {
+        return $this->hasOne('App\Entities\Vacante','IdVacante','IdVacante');
+    }
 }

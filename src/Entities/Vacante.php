@@ -31,4 +31,9 @@ class Vacante extends Model {
     ];
 
     public $timestamps = false;
+
+    public function datosEmpresa()
+    {
+        return $this->hasOne('App\Entities\DatosEmpresa','correo_empresa','correo_empresa');
+    }
 }
