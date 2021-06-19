@@ -1,15 +1,8 @@
 <?php
-// if (isset($_POST['submit'])) {
-//     $nombre = $_POST['nombre_usuario'];
-//     $apellido = $_POST['apellido'];
-//     $correo = $_POST['correo_usuario'];
-//     $clave_usuario = $_POST['contrasena_usuario'];
-// }
-?>
-<?php
     $title = "Empleando &mdash; - Encuentra el trabajo de tus sueños";
     include 'templates/header.php';
 ?>
+
 <!-- HOME -->
 <section class="home-section section-hero overlay bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
 
@@ -263,6 +256,7 @@
         </div>
     </div>
 </section>
+
 <?php
     include 'templates/footer.php';
 ?>

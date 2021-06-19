@@ -51,20 +51,24 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <?php if(isset($_SESSION['correo_usuario'])) { ?>
+                <?php if (isset($_SESSION['correo_usuario'])) { ?>
                     <a class="nav__lii dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Mi Cuenta
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
                         <a class="dropdown-item" href="cvUsuario.php">Mi CV</a>
-                        <a class="dropdown-item" href="logout.php">Cerrar Sesión</a>
+                        <a class="dropdown-item" href="postulaciones.php">Mis postulaciones</a>
+                        <a class="dropdown-item text-danger" href="logout.php">Cerrar Sesión</a>
                     </div>
-                <?php } ?>
-                <div class="MyForm collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
+                <?php 
+                } 
+                else {    
+                ?>
+                <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
                     <!-- SESION  -->
 
-                    <ul id="MyForm" class="MyForm navbar-nav ">
+                    <ul class="navbar-nav ">
                         <li class="nav-item dropdown">
                             <a class="pruebaslocas nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ASPIRANTE
@@ -90,7 +94,7 @@
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-md-12">
-                                            <input type="submit" onclick="HideElement()" value="Iniciar Sesión" class="btnAction_vacio btn px-4 btn-primary text-white" onclick="verificarusuario()">>
+                                            <input type="submit" onclick="HideElement()" value="Iniciar Sesión" class="btnAction_vacio btn px-4 btn-primary text-white" onclick="verificarusuario()">
                                         </div>
                                     </div>
                                 </form>
@@ -138,12 +142,10 @@
                                 <a class="dropdown-item text-black" id="opcRegistro" href="#">SOY USUARIO</a>
                                 <hr>
                                 <a class="dropdown-item text-black" id="opcRegistroEmpresa" href="#">SOY EMPRESA</a>
-
                             </div>
                         </li>
                     </ul>
                 </div>
-
+                <?php } ?>
             </nav>
-
         </header>
