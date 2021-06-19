@@ -35,7 +35,6 @@
         </div>
     </div>
 
-
     <div class="site-wrap">
 
         <div class="site-mobile-menu site-navbar-target">
@@ -52,15 +51,16 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="nav__lii dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Mi Cuenta
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <?php if(isset($_SESSION['correo_usuario'])) { ?>
+                    <a class="nav__lii dropdown-toggle active" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mi Cuenta
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                    <a class="dropdown-item" href="cvUsuario.php">Mi CV</a>
-                    <a class="dropdown-item" href="funciones/cerrarsesion.php">Cerrar Sesión</a>
-                </div>
-
+                        <a class="dropdown-item" href="cvUsuario.php">Mi CV</a>
+                        <a class="dropdown-item" href="logout.php">Cerrar Sesión</a>
+                    </div>
+                <?php } ?>
                 <div class="MyForm collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
                     <!-- SESION  -->
 
@@ -71,7 +71,7 @@
                             </a>
 
                             <div id="Registros" class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                                <form method="POST" action="funciones/accesousuario.php" class="p-4 border rounded col-12 dropdown-item">
+                                <form method="POST" action="login.php" class="p-4 border rounded col-12 dropdown-item">
 
                                     <div class="row form-group">
                                         <div class="col-md-12 mb-3 mb-md-0">

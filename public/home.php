@@ -1,9 +1,8 @@
 <?php
+require '../vendor/autoload.php';
+require '../config/database.php';
+
 session_start();
 
-if (isset($_SESSION['correo_empresa'])) {
-    header("location:misvacantes.php");
-}
-
-$usuarios = App\Entities\Usuario::All();
+$usuarios = App\Entities\Usuario::where('IdUsuario', 1)->first();
 include '../resources/views/home-view.php';
