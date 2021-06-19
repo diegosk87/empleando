@@ -8,5 +8,42 @@ class Usuario extends Model {
     protected $table = 'usuario';
     protected $primaryKey = 'IdUsuario';
 
+    protected $fillable = [
+        'IdUsuario',
+        'correo_usuario',
+        'nombre_usuario',
+        'apellido',
+        'contrasena_usuario',
+        'UrlImagen',
+        'puesto',
+        'descripcion',
+        'salarioMin',
+        'salarioMax',
+        'numero_telefonico',
+        'edad',
+        'sexo',
+        'fecha_nacimiento',
+        'estado_civil',
+        'Estado',
+        'UrlImagenCV'
+    ];
+
     public $timestamps = false;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
