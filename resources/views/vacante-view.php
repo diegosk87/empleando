@@ -3,7 +3,6 @@
     include 'templates/header.php';
 ?>
 
-<div id="separator" style="height: 90px;"></div>
 <form method="POST" action="funciones/AplicarVacante.php" enctype='multipart/form-data'>
     <hr>
     <div class="general-vac">

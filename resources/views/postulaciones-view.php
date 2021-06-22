@@ -3,7 +3,6 @@
     include 'templates/header.php';
 ?>
 
-<div id="separator" style="height: 90px;"></div>
 <section class="mis-postulaciones">
     <table class="table">
         <thead class="thead-dark">

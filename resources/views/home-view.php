@@ -1,6 +1,6 @@
 <?php
     $title = "Empleando &mdash; - Encuentra el trabajo de tus sueños";
-    include 'templates/header.php';
+    include 'templates/main-header.php';
 ?>
 
 <!-- HOME -->
@@ -258,5 +258,5 @@
 </section>
 
 <?php
-    include 'templates/footer.php';
+    include 'templates/main-footer.php';
 ?>
