@@ -1,2 +1,6 @@
 # Dependencies
 vendor/
+
+# Pictures
+public/images/
+public/img
