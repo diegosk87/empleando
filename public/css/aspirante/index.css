@@ -79,4 +79,31 @@
       text-align: left;
       width: 200px;
   }
-  
+
+/* CV | Cargador de imagen */
+#image-uploader {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-position: top center;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#placeholder-uploader {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #00000088;
+  color: #FFF;
+  font-weight: 700;
+  line-height: 16;
+  display: none;
+}
+
+#image-uploader:hover #placeholder-uploader {
+  display: block;
+}
