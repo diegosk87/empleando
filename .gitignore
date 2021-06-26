@@ -1,6 +1,9 @@
 # Dependencies
 vendor/
 
+# other files
+*.zip
+
 # Pictures
 public/images/
 public/img
