@@ -1,0 +1,82 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 0px;
+    margin: 0px;
+  }
+  :root {
+    --navbarColor: rgb(0, 31, 95);
+    --navbarLinkHover: rgb(1, 7, 20)
+    --linkColor : rgb(255, 255, 255);
+  }
+  
+  /* Estilo a todas las listas */
+  li {
+    list-style: none;
+    text-decoration: none;
+  }
+ /* Estilo a todas las listas */
+  
+ /* Barra de navegación */
+  .header {
+    background-color: var(--navbarColor);
+    min-width: 100%;
+    width: 100%;
+  }
+  .header .menu_empresa {
+    grid-area: header;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 20px;
+    grid-template-areas:"logoEmpresa navbar dropdown" ;
+  }
+  
+  .logoEmpresa{
+      grid-area: logoEmpresa;
+      align-items: center;
+  }
+  .navbar {
+      grid-area: navbar;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .dropdown {
+      grid-area: dropdown;
+      margin-right: 50px;
+  }
+  
+  
+  
+  .header .menu_empresa .navbar  ul {
+      text-align: right;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+  }
+  .header .menu_empresa .navbar  ul li {
+      display: inline-block;
+  }
+  
+  .header .menu_empresa .navbar  ul li a{
+      
+      color: var(--linkColor);
+      text-decoration: none;
+      margin: 0px 20px 0px 20px;
+      padding: 12px;
+  }
+  .header .menu_empresa .navbar  ul li:hover{
+      transition: ease-in .5s;
+      box-shadow: inset 10px 0px 0px 0px var(--linkColor);
+    
+  }
+  
+  .drop_menu{
+      text-align: left;
+      width: 200px;
+  }
+  

@@ -19,8 +19,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
-
-
     <script>
         $('.logo-slider').slick({
             slidesToShow: 5,
@@ -30,9 +28,6 @@
             autoplay: true,
             autoplaySpeed: 1000,
             infinte: true
-
-
-
         });
     </script>
 
