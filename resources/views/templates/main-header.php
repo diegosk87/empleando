@@ -107,7 +107,7 @@
                             </a>
 
                             <div id="Registros" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <form method="POST" action="funciones/accEmpresa.php" class="p-4 border rounded col-12 dropdown-item">
+                                <form method="POST" action="login.php" class="p-4 border rounded col-12 dropdown-item">
 
                                     <div class="row form-group">
                                         <div class="col-md-12 mb-3 mb-md-0">
