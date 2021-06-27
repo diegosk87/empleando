@@ -14,46 +14,46 @@
 
                 </div>
 
-                <form method="" class="search-jobs-form">
+                <form action="busqueda-empleo.php" method="POST" class="search-jobs-form">
                     <div class="row mb-5 align-items-center">
                         <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-4 mb-lg-0">
-                            <input type="text" class="form-control form-control-lg" placeholder="Título del trabajo, compañía..">
+                            <input name="busqueda" type="text" class="form-control form-control-lg" placeholder="Título del trabajo, compañía..">
                         </div>
 
                         <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-4 mb-lg-0">
-                            <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" data-size="4" title="Estado">
+                            <select name="estado" class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" data-size="4" title="Estado">
 
                             </select>
                         </div>
 
                         <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-4 mb-lg-0">
-                            <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" data-size="4" title="Categoria">
-                                <option value="">Administración</option>
-                                <option value="">Aduana y comercio Exterior</option>
-                                <option value="">Atención Clientes - Call Center</option>
-                                <option value="">Compras / Comercio Exterior</option>
-                                <option value="">Comunicación , diseño y arte</option>
-                                <option value="">Contabilidad - Finanzas</option>
-                                <option value="">Educación - Docencia - Consultoria</option>
-                                <option value="">Derecho - Leyes</option>
-                                <option value="">Ingenieria Industrial - Civil y construccion </option>
-                                <option value="">Informatica / Desarrollo / Telecomunicaciones</option>
-                                <option value="">Logistica / Transporte / Almacen</option>
-                                <option value="">Mercadotecnia - Publicidad</option>
-                                <option value="">Manufactura / Produccion / Mantenimiento</option>
-                                <option value="">Oficios y otros</option>
-                                <option value="">Pasantia - Trainee - Becarios</option>
-                                <option value="">Produccion y Manufactura</option>
-                                <option value="">Recursos Humanos</option>
-                                <option value="">Sector Salud </option>
-                                <option value="">Turismo - Gastronomia</option>
-                                <option value="">Ventas</option>
-                                <option value="">Otros</option>
+                            <select name="categoria" class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" data-size="4" title="Categoria">
+                                <option>Administración</option>
+                                <option>Aduana y comercio Exterior</option>
+                                <option>Atención Clientes - Call Center</option>
+                                <option>Compras / Comercio Exterior</option>
+                                <option>Comunicación , diseño y arte</option>
+                                <option>Contabilidad - Finanzas</option>
+                                <option>Educación - Docencia - Consultoria</option>
+                                <option>Derecho - Leyes</option>
+                                <option>Ingenieria Industrial - Civil y construccion </option>
+                                <option>Informatica / Desarrollo / Telecomunicaciones</option>
+                                <option>Logistica / Transporte / Almacen</option>
+                                <option>Mercadotecnia - Publicidad</option>
+                                <option>Manufactura / Produccion / Mantenimiento</option>
+                                <option>Oficios y otros</option>
+                                <option>Pasantia - Trainee - Becarios</option>
+                                <option>Produccion y Manufactura</option>
+                                <option>Recursos Humanos</option>
+                                <option>Sector Salud </option>
+                                <option>Turismo - Gastronomia</option>
+                                <option>Ventas</option>
+                                <option>Otros</option>
                             </select>
                         </div>
 
                         <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-4 mb-lg-0">
-                            <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" title="Jornada Laboral">
+                            <select name="tiempo" class="selectpicker" data-style="btn-white btn-lg" data-width="100%" title="Jornada Laboral">
                                 <option>Medio Tiempo</option>
                                 <option>Tiempo completo</option>
                             </select>

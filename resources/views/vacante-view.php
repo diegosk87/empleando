@@ -3,6 +3,12 @@
     include 'templates/header.php';
 ?>
 
+<link rel="stylesheet" href="css/estilosEmpleos.css">
+<link rel="stylesheet" href="css/empresa/estilos.css">
+<link rel="stylesheet" href="css/aspirante/index.css">
+
+<script src="https://kit.fontawesome.com/e8948024cf.js" crossorigin="anonymous"></script>
+
 <form method="POST" action="funciones/AplicarVacante.php" enctype='multipart/form-data'>
     <hr>
     <div class="general-vac">
