@@ -8,12 +8,14 @@ $usuario = App\Entities\Usuario::where('correo_usuario', $_POST['correo_usuario'
 
 if($usuario) {
     $_SESSION['correo_usuario'] = $usuario->correo_usuario;
+    $_SESSION['tipo_usuario'] = 1;
     header('location:index.php');
 }
 else {
-    $empresa = App\Entities\DatosEmpresa::where('correo_empresa', $_POST['correo_empresa'])->first();
+    $empresa = App\Entities\DatosEmpresa::where('correo_empresa', $_POST['correo_empresa'])->where('clave', $_POST['contrasena_empresa'])->first();
     if($empresa) {
-        $_SESSION['correo_empresa'] = $empresa->correo_empresa;
+        $_SESSION['correo_usuario'] = $empresa->correo_empresa;
+        $_SESSION['tipo_usuario'] = 2;
         header('location:mis-vacantes.php');
     }
     else {
