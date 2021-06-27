@@ -399,7 +399,7 @@ include 'templates/header.php';
         <div class="container-button boton-visualizar">
             <button class="btn btn-bootstrap" name="insertarcv" type="submit">Guardar perfil</button>
 
-            <a href="Vistaprevia.php"><input clas="btn-visualizar" type="button" value="Vista previa">
+            <a href="vista-previa.php"><input clas="btn-visualizar" type="button" value="Vista previa">
 
         </div>
         <br>
