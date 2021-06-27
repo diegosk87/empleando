@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>X Trabajos &mdash; - Encuentra el trabajo de tus sueños</title>
+    <title><?= $title ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="" />
@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/aspirante/index.css">
     <link rel="stylesheet" href="css/estilosAspirante.css">
-    <link rel="stylesheet" href="css/aspirante/subircv.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.js"></script>

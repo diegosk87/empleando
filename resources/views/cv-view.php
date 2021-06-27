@@ -5,21 +5,15 @@ include 'templates/header.php';
 
 <div class="container-home">
     <main class="home">
-        <!-- ================ división del perfil ===============-->
-        <form action="image-uploader.php" method="POST" enctype="multipart/form-data">
-            <div class="container-perfil form-group row">
-
-                <div class="conperfil">
-                    <div class="img-perfil ">
-                        <img src="<?= $usuario->UrlImagen; ?>">
-                    </div>
-                </div>
-                <div class="conte-input-subir">
-                    Añadir imagen: <input name="UrlImagen" id="UrlImagen" type="file" />
-                </div>
-                <button id="btn2" class="botonCV" name="insertarescolaridad" type="submit">Agregar Imagen</button>
-            </div>
-        </form>
+        <div class="container mb-2 text-center">
+            <form action="image-uploader.php" method="POST" enctype="multipart/form-data">
+                <label id="image-uploader" style="background-image: url('<?= $usuario->UrlImagen; ?>');">
+                    <input name="UrlImagen" type="file" onchange="setPreviewImage(event)" class="d-none">
+                    <div id="placeholder-uploader">Cambiar imagen</div>
+                </label><br>
+                <input id="save-image" class="btn btn-primary btn-sm d-none" type="submit" value="Guardar Imagen">
+            </form>
+        </div>
 
         <form method="POST" action="funciones/cvusuario.php" enctype='multipart/form-data'>
             <div class="container-titulo-cv datos-form">
@@ -405,7 +399,7 @@ include 'templates/header.php';
         <div class="container-button boton-visualizar">
             <button class="btn btn-bootstrap" name="insertarcv" type="submit">Guardar perfil</button>
 
-            <a href="Vistaprevia.php"><input clas="btn-visualizar" type="button" value="Vista previa">
+            <a href="vista-previa.php"><input clas="btn-visualizar" type="button" value="Vista previa">
 
         </div>
         <br>
@@ -477,6 +471,18 @@ include 'templates/header.php';
         });
     });
 </script>
+
+<script>
+    function setPreviewImage(e) {
+        let reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        reader.onload = () => {
+            $('#image-uploader').css("background-image", 'url(' + reader.result + ')');
+            $('#save-image').removeClass('d-none');
+        }
+    }
+</script>
+
 <!--skills-->
 <script type="text/javascript">
     $(document).ready(function() {

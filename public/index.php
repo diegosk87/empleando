@@ -2,4 +2,6 @@
 require '../vendor/autoload.php';
 require '../config/database.php';
 
-include 'home.php';
+session_start();
+
+include '../resources/views/home-view.php';

@@ -56,10 +56,20 @@
                         Mi Cuenta
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
+                    <?php if ($_SESSION['tipo_usuario'] == 1) { ?>
                         <a class="dropdown-item" href="cv.php">Mi CV</a>
                         <a class="dropdown-item" href="postulaciones.php">Mis postulaciones</a>
                         <a class="dropdown-item text-danger" href="logout.php">Cerrar Sesión</a>
+                    <?php 
+                    } 
+                    else {
+                    ?>
+                        <a class="dropdown-item" href="#">Planes y facturas</a>
+                        <a class="dropdown-item" href="#">Busquedas de CV'S</a>
+                        <a class="dropdown-item" href="#">Publicar vacantes</a>
+                        <a class="dropdown-item" href="mis-vacantes.php">Mis vacantes</a>
+                        <a class="dropdown-item text-danger" href="logout.php">Cerrar sesion</a>
+                    <?php } ?>
                     </div>
                 <?php 
                 } 
@@ -107,7 +117,7 @@
                             </a>
 
                             <div id="Registros" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <form method="POST" action="funciones/accEmpresa.php" class="p-4 border rounded col-12 dropdown-item">
+                                <form method="POST" action="login.php" class="p-4 border rounded col-12 dropdown-item">
 
                                     <div class="row form-group">
                                         <div class="col-md-12 mb-3 mb-md-0">
