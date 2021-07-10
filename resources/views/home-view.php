@@ -76,7 +76,7 @@
                             <i class=" fas fa-times-circle" id="btnCerrar" style="font-size: 40px;"></i>
                         </header>
 
-                        <form method="post" action="funciones/Regis_empresa.php" enctype='multipart/form-data' class="p-4 border rounded formContainer">
+                        <form method="post" action="registro-api.php" enctype='multipart/form-data' class="p-4 border rounded formContainer">
                             <div class=" row form-group mb-4 justify-content-between ">
 
 
@@ -179,7 +179,7 @@
                                 <h3>Registro de Usuarios</h3>
                             </span> <i class="mb-6 fas fa-times" id="btnClose"></i>
                         </header>
-                        <form method="POST" id="prueba" action="funciones/Registro_usuario" class="p-4 border rounded formContainer">
+                        <form method="POST" id="prueba" action="registro-api.php" class="p-4 border rounded formContainer">
 
                             <!-- Datos de la cuenta-->
                             <div class="form-group mb-4">
@@ -256,7 +256,6 @@
         </div>
     </div>
 </section>
-
 <?php
     include 'templates/main-footer.php';
 ?>
