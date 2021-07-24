@@ -66,7 +66,7 @@
                     ?>
                         <a class="dropdown-item" href="#">Planes y facturas</a>
                         <a class="dropdown-item" href="#">Busquedas de CV'S</a>
-                        <a class="dropdown-item" href="#">Publicar vacantes</a>
+                        <a class="dropdown-item" href="vacantes.php">Publicar vacantes</a>
                         <a class="dropdown-item" href="mis-vacantes.php">Mis vacantes</a>
                         <a class="dropdown-item text-danger" href="logout.php">Cerrar sesion</a>
                     <?php } ?>

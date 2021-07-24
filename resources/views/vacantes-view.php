@@ -48,19 +48,18 @@ include 'templates/business-header.php';
                     </div>-->
                     <div class="areas col-md-6">
                         <label for="" class="text-black">Estado</label>
-                        <select name="Estado" id="" class="form-control" required>
+                        <select name="Estado" id="estado" class="form-control" onchange="loadMunicipalities()" required>
                             <option value="">Seleccionar</option>
-                            <option>Morelos</option>
-                            <option>CDMX</option>
+                            <?php foreach($estados as $estado) { ?>
+                                <option value="<?= $estado->id ?>"><?= $estado->nombre ?></option>
+                            <?php } ?>
                         </select>
                     </div>
 
                     <div class="areas col-md-6">
                         <label for="" class="text-black">Municipio</label>
-                        <select name="Municipio" id="" class="form-control" required>
+                        <select name="Municipio" id="municipio" class="form-control" required>
                             <option value="">Seleccionar</option>
-                            <option>Morelos</option>
-                            <option>CDMX</option>
                         </select>
                     </div>
 
@@ -106,24 +105,10 @@ include 'templates/business-header.php';
                             <option value="">Otros</option>
                         </select>
                     </div>
-
-
-
-
-
                 </div>
-
             </div>
 
-
-
-
-
-
-
-
             <div class=" datos-geograficos alert alert-primary">
-
                 <div class="textvacan row ">
                     <textarea class="descripcionVacante col-12" name="descripcion" id="" cols="" rows="5" placeholder="Descripcion de la Vacante" required></textarea>
                 </div>
@@ -165,15 +150,9 @@ include 'templates/business-header.php';
                             <input type="number" name="salarioMax" id="salarioDeseado-empresa" placeholder="$Maximo" required>
                             <input class="form-group" type="checkbox" name="ocultar" value="block">Ocultar salario
                         </div>
-
                     </div>
-
-
                 </div>
-
             </div>
-
-
 
             <div class="topp">
                 <legend>Complementarios</legend>
@@ -185,9 +164,6 @@ include 'templates/business-header.php';
                     <input type="radio" name="sexo" value="Mujer"> Mujer
                     <input type="radio" name="sexo" value="Indistinto"> Indistinto
                 </p>
-
-
-
             </div>
             <div class=" edades alert-primary alert row text-black">
                 <div class="form-group col-6">
@@ -214,8 +190,6 @@ include 'templates/business-header.php';
                         </select>
 
                     </p>
-
-
                 </div>
                 <div class="exp col-6">
                     <P>Escolaridad:
@@ -227,10 +201,7 @@ include 'templates/business-header.php';
                             <option>licenciatura</option>
                             <option>doctorado</option>
                         </select>
-
-
                     </P>
-
                 </div>
 
                 <div class="exp col-6">
@@ -244,8 +215,8 @@ include 'templates/business-header.php';
                             <option>japones</option>
                         </select>
                     </p>
-
                 </div>
+
                 <div class="exp col-6">
                     <p>Nivel:
                         <select name="nivel" id="nivel" class="form-control">
@@ -255,22 +226,13 @@ include 'templates/business-header.php';
                             <option>nativo</option>
 
                         </select>
-
-
                     </p>
-
                 </div>
-
-
-
             </div>
-
         </section>
         <hr>
-
-
-
     </div>
+
     <div class="boton-visualizar">
         <button id="btn2" class="btn btn-bootstrap" type="">Vista previa</button>
 
@@ -280,14 +242,32 @@ include 'templates/business-header.php';
 
 </form>
 
-
-
 </body>
 
 
 <script src="js/vacantes.js"></script>
 
 <script>
+    function loadMunicipalities() {
+        // $('select#estado option').filter(':selected').val()
+        let estado_id = $('select#estado').val();
+        
+        $.ajax({
+            type: "GET",
+            url: "api/municipios.php",
+            data: { estado_id },
+            success: res => {
+                let municipios = JSON.parse(res);
+                $('select#municipio').empty();
+                $('select#municipio').append('<option value="">Seleccionar</option>');
+
+                for(let municipio of municipios)
+                    $('select#municipio').append(`<option value="${municipio.id}">${municipio.nombre}</option>`);
+            },
+            error: err => console.log('Error loading data')
+        });
+    }
+
     //creamos un pequeña funcion la cual sera llamada desde el html
     function validateForm() {
         //capturamos el valor(value) de myfrom/fname 

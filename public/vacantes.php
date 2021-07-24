@@ -7,6 +7,7 @@ session_start();
 if(isset($_SESSION['correo_usuario']) && $_SESSION['tipo_usuario'] == 2) {
     $empresa = App\Entities\DatosEmpresa::where('correo_empresa', $_SESSION['correo_usuario'])->first();
     $vacantes = App\Entities\Vacante::where('correo_empresa', $_SESSION['correo_usuario'])->get();
+    $estados = App\Entities\Estados::all();
 }
 else header('location:index.php');
 
