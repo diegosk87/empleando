@@ -92,9 +92,9 @@ include 'templates/header.php';
                         <div class="col-md-5 mb-3 mb-md-0">
                             <label for="userForm" class="text-black">Estado/Ubicación</label>
                             <select name="Estado" class="form-control">
-                                <option>Morelos</option>
-                                <option>CDMX</option>
-
+                            <?php foreach($estados as $estado) { ?>
+                                <option><?= $estado->nombre ?></option>
+                            <?php } ?>
                             </select>
                         </div>
                     </div>

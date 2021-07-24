@@ -21,7 +21,7 @@ if($filter['busqueda']) {
 
 if($filter['estado']) {
     $query .= " AND A.Estado = ?";
-    array_push($params, 'Morelos');
+    array_push($params, $filter['estado']);
 }
 
 if($filter['categoria']) {
@@ -34,6 +34,7 @@ if($filter['tiempo']) {
     array_push($params, $filter['tiempo']);
 }
 
+$estados = App\Entities\Estados::all();
 $vacantes = Illuminate\Database\Capsule\Manager::select($query, $params);
 
 include '../resources/views/busqueda-empleo-view.php';

@@ -22,7 +22,9 @@
 
                         <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-4 mb-lg-0">
                             <select name="estado" class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" data-size="4" title="Estado">
-
+                                <?php foreach($estados as $estado) { ?>
+                                    <option><?= $estado->nombre ?></option>
+                                <?php } ?>
                             </select>
                         </div>
 
