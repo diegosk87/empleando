@@ -29,6 +29,11 @@ class Usuario extends Model {
     ];
 
     public $timestamps = false;
+
+    public function escolaridades()
+    {
+        return $this->hasMany('App\Entities\CurriculumEscolaridad','correo_usuario','correo_usuario');
+    }
 }
 
 
