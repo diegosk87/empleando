@@ -47,12 +47,12 @@ include 'templates/header.php';
                         <div class="col-md-5">
                             <label for="userForm" class="text-black">Estado Civil</label>
                             <select name="estado_civil" class="form-control">
-                                <option><?= $usuario->estado_civil; ?></option>
-                                <option value="soltero">Soltero/a</option>
-                                <option value="casado">Casado/a</option>
-                                <option value="divorciado">Divorciado/a</option>
-                                <option value="viudo">Viudo/a</option>
-                                <option value="otro">otro</option>
+                                <option value="">Seleccionar</option>
+                                <option value="Soltero/a" <?= $usuario->estado_civil!="Soltero/a"?"":"selected" ?>>Soltero/a</option>
+                                <option value="Casado/a" <?= $usuario->estado_civil!="Casado/a"?"":"selected" ?>>Casado/a</option>
+                                <option value="Divorciado/a" <?= $usuario->estado_civil!="Divorciado/a"?"":"selected" ?>>Divorciado/a</option>
+                                <option value="Viudo/a" <?= $usuario->estado_civil!="Viudo/a"?"":"selected" ?>>Viudo/a</option>
+                                <option value="Otro" <?= $usuario->estado_civil!="Otro"?"":"selected" ?>>Otro</option>
                             </select>
                         </div>
                     </div>
@@ -72,10 +72,10 @@ include 'templates/header.php';
                         <div class="col-md-5">
                             <label for="userForm" class="text-black">Sexo</label>
                             <select name="sexo" class="form-control">
-                                <option><?= $usuario->sexo; ?></option>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Femenino">Femenino</option>
-                                <option value="Indistinto">Indistinto</option>
+                                <option value="">Seleccionar</option>
+                                <option value="Masculino" <?= $usuario->sexo!="Masculino"?"":"selected" ?>>Masculino</option>
+                                <option value="Femenino" <?= $usuario->sexo!="Femenino"?"":"selected" ?>>Femenino</option>
+                                <option value="Indistinto" <?= $usuario->sexo!="Indistinto"?"":"selected" ?>>Indistinto</option>
                             </select>
                         </div>
                         <div class="col-md-5 mb-3 mb-md-0">
@@ -92,8 +92,9 @@ include 'templates/header.php';
                         <div class="col-md-5 mb-3 mb-md-0">
                             <label for="userForm" class="text-black">Estado/Ubicación</label>
                             <select name="Estado" class="form-control">
+                                <option value="">Seleccionar</option>
                             <?php foreach($estados as $estado) { ?>
-                                <option><?= $estado->nombre ?></option>
+                                <option <?= $usuario->Estado!=$estado->nombre?"":"selected" ?>><?= $estado->nombre ?></option>
                             <?php } ?>
                             </select>
                         </div>
@@ -122,35 +123,35 @@ include 'templates/header.php';
                 <div class="row form-group contEscolaridad" id="contenedorEscolaridad">
 
                     <div class="row col-md-12 form-group" id="container-institucion">
-
+                        <?php foreach($usuario->escolaridades as $escolaridad) { ?>
                         <div class="col-md-12 mb-3 mb-md-0">
                             <label for="userForm" class="text-black">Escolaridad</label>
                             <select name="escolaridad" id="escolaridad" class="form-control" required>
                                 <option value="">Seleccionar</option>
-                                <option value="primaria">Primaria</option>
-                                <option value="Secundaria">Secundaria</option>
-                                <option value="Bachillerato">Bachillerato</option>
-                                <option value="Educación Profesional Técnica">Educación Profesional Técnica</option>
-                                <option value="Licenciatura Concluida">Licenciatura Concluida</option>
-                                <option value="Licenciatura Trunca">Licenciatura Trunca</option>
-                                <option value="Ingeniería Concluida">Ingeniería Concluida</option>
-                                <option value="Ingeniería Trunca">Ingeniería Trunca</option>
-                                <option value="Maestria">Maestria</option>
-                                <option value="Doctorado">Doctorado</option>
+                                <option <?= $escolaridad->escolaridad!="Primaria"?"":"selected" ?>>Primaria</option>
+                                <option <?= $escolaridad->escolaridad!="Secundaria"?"":"selected" ?>>Secundaria</option>
+                                <option <?= $escolaridad->escolaridad!="Bachillerato"?"":"selected" ?>>Bachillerato</option>
+                                <option <?= $escolaridad->escolaridad!="Educación Profesional Técnica"?"":"selected" ?>>Educación Profesional Técnica</option>
+                                <option <?= $escolaridad->escolaridad!="Licenciatura Concluida"?"":"selected" ?>>Licenciatura Concluida</option>
+                                <option <?= $escolaridad->escolaridad!="Licenciatura Trunca"?"":"selected" ?>>Licenciatura Trunca</option>
+                                <option <?= $escolaridad->escolaridad!="Ingeniería Concluida"?"":"selected" ?>>Ingeniería Concluida</option>
+                                <option <?= $escolaridad->escolaridad!="Ingeniería Trunca"?"":"selected" ?>>Ingeniería Trunca</option>
+                                <option <?= $escolaridad->escolaridad!="Maestria"?"":"selected" ?>>Maestria</option>
+                                <option <?= $escolaridad->escolaridad!="Doctorado"?"":"selected" ?>>Doctorado</option>
                             </select>
                         </div>
 
                         <div class="col-md-12">
                             <label class="text-black" for="userForm">Institución</label>
-                            <input type="text" id="institucion" name="institucion" class="form-control" required>
+                            <input type="text" id="institucion" value="<?= $escolaridad->institucion ?>" name="institucion" class="form-control" required>
                         </div>
                         <div class="col-md-3">
                             <label for="userForm">Inicio</label>
-                            <input type="date" id="FechaIni_esco" name="FechaIni_esco" class="form-control" required>
+                            <input type="date" id="FechaIni_esco" value="<?= $escolaridad->FechaIni_esco ?>" name="FechaIni_esco" class="form-control" required>
                         </div>
                         <div class="col-md-3">
                             <label for="userForm">Final</label>
-                            <input class="form-control" id="FechaFin_esco" type="date" name="FechaFin_esco" required>
+                            <input class="form-control" id="FechaFin_esco" value="<?= $escolaridad->FechaFin_esco ?>" type="date" name="FechaFin_esco" required>
                         </div>
 
                         <div class="col-md-12 form-group row justify-content-center">
@@ -159,13 +160,14 @@ include 'templates/header.php';
                                 <label class="form-check-label" for="exampleCheck1" value="fecha">Cursando Actualmente</label>
                             </div>
                         </div>
+                        <hr>
+                        <?php } ?>
                         <div class="row col-md-12 justify-content-center">
                             <div class="faMas" id="fa-plus-circle">
                                 <i class="fas fa-plus-circle" id="btnAgregarInstitucion" onclick="clonarInstitucion()"></i><b>Agregar
                                     otra</b>
                             </div>
                         </div>
-
                     </div>
 
 
@@ -397,7 +399,7 @@ include 'templates/header.php';
 
         <br>
         <div class="container-button boton-visualizar">
-            <button class="btn btn-bootstrap" name="insertarcv" type="submit">Guardar perfil</button>
+            <button class="btn btn-primary" name="insertarcv" type="submit">Guardar perfil</button>
 
             <a href="vista-previa.php"><input clas="btn-visualizar" type="button" value="Vista previa">
 
