@@ -49,14 +49,5 @@
             }
         }
     </script>
-    <script type="text/javascript">
-        document.getElementById('MyForm').style.display = 'block';
-
-        function HideElement() {
-
-            document.getElementById('MyForm').style.display = 'block';
-
-        }
-    </script>
 </body>
 </html>

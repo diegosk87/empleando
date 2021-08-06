@@ -108,7 +108,7 @@ include 'templates/header.php';
         </div>
 
         <!-- universidad --->
-        <form id="frmajax" method="POST">
+        <form id="form_escolaridad" method="POST">
             <div class="container-datos-escolares datos-form" id="datos-escolares">
                 <header class="cabecera">
                     <div class="legend">
@@ -121,66 +121,64 @@ include 'templates/header.php';
                 </header>
 
                 <div class="row form-group contEscolaridad" id="contenedorEscolaridad">
-
                     <div class="row col-md-12 form-group" id="container-institucion">
                         <?php foreach($usuario->escolaridades as $escolaridad) { ?>
-                        <div class="col-md-12 mb-3 mb-md-0">
-                            <label for="userForm" class="text-black">Escolaridad</label>
-                            <select name="escolaridad" id="escolaridad" class="form-control" required>
-                                <option value="">Seleccionar</option>
-                                <option <?= $escolaridad->escolaridad!="Primaria"?"":"selected" ?>>Primaria</option>
-                                <option <?= $escolaridad->escolaridad!="Secundaria"?"":"selected" ?>>Secundaria</option>
-                                <option <?= $escolaridad->escolaridad!="Bachillerato"?"":"selected" ?>>Bachillerato</option>
-                                <option <?= $escolaridad->escolaridad!="Educación Profesional Técnica"?"":"selected" ?>>Educación Profesional Técnica</option>
-                                <option <?= $escolaridad->escolaridad!="Licenciatura Concluida"?"":"selected" ?>>Licenciatura Concluida</option>
-                                <option <?= $escolaridad->escolaridad!="Licenciatura Trunca"?"":"selected" ?>>Licenciatura Trunca</option>
-                                <option <?= $escolaridad->escolaridad!="Ingeniería Concluida"?"":"selected" ?>>Ingeniería Concluida</option>
-                                <option <?= $escolaridad->escolaridad!="Ingeniería Trunca"?"":"selected" ?>>Ingeniería Trunca</option>
-                                <option <?= $escolaridad->escolaridad!="Maestria"?"":"selected" ?>>Maestria</option>
-                                <option <?= $escolaridad->escolaridad!="Doctorado"?"":"selected" ?>>Doctorado</option>
-                            </select>
-                        </div>
+                            <div class="col-md-12 mb-3 mb-md-0 row">
+                            <div class="col-md-12 mb-3 mb-md-0">
+                                <label for="userForm" class="text-black">Escolaridad</label>
+                                <select name="escolaridad" id="escolaridad" class="form-control" required>
+                                    <option value="">Seleccionar</option>
+                                    <option <?= $escolaridad->escolaridad!="Primaria"?"":"selected" ?>>Primaria</option>
+                                    <option <?= $escolaridad->escolaridad!="Secundaria"?"":"selected" ?>>Secundaria</option>
+                                    <option <?= $escolaridad->escolaridad!="Bachillerato"?"":"selected" ?>>Bachillerato</option>
+                                    <option <?= $escolaridad->escolaridad!="Educación Profesional Técnica"?"":"selected" ?>>Educación Profesional Técnica</option>
+                                    <option <?= $escolaridad->escolaridad!="Licenciatura Concluida"?"":"selected" ?>>Licenciatura Concluida</option>
+                                    <option <?= $escolaridad->escolaridad!="Licenciatura Trunca"?"":"selected" ?>>Licenciatura Trunca</option>
+                                    <option <?= $escolaridad->escolaridad!="Ingeniería Concluida"?"":"selected" ?>>Ingeniería Concluida</option>
+                                    <option <?= $escolaridad->escolaridad!="Ingeniería Trunca"?"":"selected" ?>>Ingeniería Trunca</option>
+                                    <option <?= $escolaridad->escolaridad!="Maestria"?"":"selected" ?>>Maestria</option>
+                                    <option <?= $escolaridad->escolaridad!="Doctorado"?"":"selected" ?>>Doctorado</option>
+                                </select>
+                            </div>
 
-                        <div class="col-md-12">
-                            <label class="text-black" for="userForm">Institución</label>
-                            <input type="text" id="institucion" value="<?= $escolaridad->institucion ?>" name="institucion" class="form-control" required>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="userForm">Inicio</label>
-                            <input type="date" id="FechaIni_esco" value="<?= $escolaridad->FechaIni_esco ?>" name="FechaIni_esco" class="form-control" required>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="userForm">Final</label>
-                            <input class="form-control" id="FechaFin_esco" value="<?= $escolaridad->FechaFin_esco ?>" type="date" name="FechaFin_esco" required>
-                        </div>
+                            <div class="col-md-12">
+                                <label class="text-black" for="userForm">Institución</label>
+                                <input type="text" id="institucion" value="<?= $escolaridad->institucion ?>" name="institucion" class="form-control" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="userForm">Inicio</label>
+                                <input type="date" id="FechaIni_esco" value="<?= $escolaridad->FechaIni_esco ?>" name="FechaIni_esco" class="form-control" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="userForm">Final</label>
+                                <input class="form-control" id="FechaFin_esco" value="<?= $escolaridad->FechaFin_esco ?>" type="date" name="FechaFin_esco" required>
+                            </div>
 
-                        <div class="col-md-12 form-group row justify-content-center">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1" value="fecha">Cursando Actualmente</label>
+                            <div class="col-md-12 form-group row justify-content-center">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1" value="fecha">Cursando Actualmente</label>
+                                </div>
+                                <div class="btn btn-sm btn-danger ml-3" onclick="$(this).parent().parent().remove()">Eliminar</div>
                             </div>
                         </div>
-                        <hr>
-                        <?php } ?>
-                        <div class="row col-md-12 justify-content-center">
-                            <div class="faMas" id="fa-plus-circle">
-                                <i class="fas fa-plus-circle" id="btnAgregarInstitucion" onclick="clonarInstitucion()"></i><b>Agregar
-                                    otra</b>
-                            </div>
+                    <?php } ?>
+                    </div>
+                    <div class="row col-md-12 justify-content-center">
+                        <div class="faMas" id="fa-plus-circle">
+                            <i class="fas fa-plus-circle" id="btnAgregarInstitucion" onclick="addNewScholarship()"></i><b>Agregar
+                                otra</b>
                         </div>
                     </div>
-
-
-                </div>
-                <div class="GuardarCv">
-                    <button id="register" class="botonCV">Agregar Escolaridad</button>
-
+                    <div class="row col-md-12 justify-content-center">
+                        <input class="btn btn-primary my-2" type="submit" value="Guardar escolaridades">
+                    </div>
                 </div>
             </div>
         </form>
 
         <!-- Datos laborales-->
-        <form id="trabajax" method="POST">
+        <form id="form_trabajo" method="POST">
             <div class="container-datos-laborales datos-form">
                 <header class="cabecera">
                     <div class="legend">
@@ -192,7 +190,7 @@ include 'templates/header.php';
                     </div>
                 </header>
 
-                <div class=" datos-laborales" id="datos-laborales">
+                <div class="datos-laborales" id="datos-laborales">
                     <div class="row form-group mb-4" id="trabajos">
                         <div class="col-md-12">
                             <label class="text-black" for="userForm"> Empresa</label>
@@ -227,20 +225,18 @@ include 'templates/header.php';
                         <div class="md-form col-md-12">
                             <br>
                             <textarea name="actividades" class="md-textarea form-control" placeholder="Actividades" rows="5" required></textarea>
-
+                            <center><div class="btn btn-sm btn-danger ml-3" onclick="$(this).parent().parent().remove()">Eliminar</div></center>
                         </div>
-
-                        <div class="row col-md-12 justify-content-center">
-                            <div class="faMas" id="fa-plus-circle">
-                                <i class="fas fa-plus-circle" id="btnAgregarInstitucion" onclick="clonarTrabajos()"></i><b>Agregar
-                                    otra</b>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-                <div class="GuardarCv">
-                    <button id="btnempleo" class="botonCV">Agregar Trabajo</button>
+                <div class="row col-md-12 justify-content-center">
+                    <div class="faMas" id="fa-plus-circle">
+                        <i class="fas fa-plus-circle" id="btnAgregarInstitucion" onclick="addNewJob()"></i><b>Agregar
+                            otra</b>
+                    </div>
+                </div>
+                <div class="row col-md-12 justify-content-center">
+                    <input class="btn btn-primary my-2" type="submit" value="Guardar trabajos">
                 </div>
             </div>
         </form>
@@ -364,8 +360,11 @@ include 'templates/header.php';
                             </div>
                         </div>
                 </form>
-                <div class="GuardarCv">
-                    <button id="btnskills" class="botonCV">Agregar Habilidades</button>
+                <div class="row col-md-12 justify-content-center">
+                    <div class="faMas" id="fa-plus-circle">
+                        <i class="fas fa-plus-circle" id="btnAgregarInstitucion" onclick="clonarCertificaciones()"></i><b>Agregar
+                            otra</b>
+                    </div>
                 </div>
 
                 <div class="col-xl-12 col-md-12" id="certificaciones">
@@ -392,9 +391,6 @@ include 'templates/header.php';
                     </div>
                 </div>
             </div>
-            <div class="GuardarCv">
-                <button id="btnCertif" class="botonCV">Agregar Habilidades</button>
-            </div>
         </div>
 
         <br>
@@ -409,7 +405,6 @@ include 'templates/header.php';
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#register').click(function() {
@@ -530,6 +525,7 @@ include 'templates/header.php';
 </script>
 <!-- SCRIPTS -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/public/js/cv-script.js"></script>
 <!-- <script>
     function readURL(input) {
       if (input.files && input.files[0]) {
