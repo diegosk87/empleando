@@ -108,7 +108,7 @@ include 'templates/header.php';
         </div>
 
         <!-- universidad --->
-        <form id="form_escolaridad" method="POST">
+        <form id="form_escolaridad" method="POST" onsubmit="saveScolarships(this, event)">
             <div class="container-datos-escolares datos-form" id="datos-escolares">
                 <header class="cabecera">
                     <div class="legend">
@@ -156,10 +156,10 @@ include 'templates/header.php';
 
                             <div class="col-md-12 form-group row justify-content-center">
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1" value="fecha">Cursando Actualmente</label>
+                                    <input name="EnCurso" type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Cursando Actualmente</label>
                                 </div>
-                                <div class="btn btn-sm btn-danger ml-3" onclick="$(this).parent().parent().remove()">Eliminar</div>
+                                <div class="btn btn-sm btn-danger ml-3" onclick="removeScolarships(this, <?= $escolaridad->id_escolar ?>)">Eliminar</div>
                             </div>
                         </div>
                     <?php } ?>

@@ -1,3 +1,5 @@
+var deletedScolarships = [];
+
 function addNewScholarship() {
     $('#container-institucion').append(`
         <div class="col-md-12 mb-3 mb-md-0 row">
@@ -82,4 +84,38 @@ function addNewJob() {
             </div>
         </div>
     `);
+}
+
+function removeScolarships(target, id) {
+    $(target).parent().parent().remove();
+    deletedScolarships.push(id);
+}
+
+function saveScolarships(form, e) {
+    e.preventDefault();
+    var scolarships = [];
+    for(let i = 0;i < form.escolaridad.length;i++) {
+        let scolarship = { escolaridad: "", institucion: "", FechaIni_esco: "", FechaFin_esco: "", EnCurso: "" };
+        scolarship.escolaridad = form.escolaridad[i].value;
+        scolarship.institucion = form.institucion[i].value;
+        scolarship.FechaIni_esco = form.FechaIni_esco[i].value;
+        scolarship.FechaFin_esco = form.FechaFin_esco[i].value;
+        scolarship.EnCurso = form.EnCurso[i].checked;
+
+        scolarships.push(scolarship);
+    }
+
+    $.ajax({
+        type: 'POST',
+        url: 'api/scolarships.php',
+        data: {
+            scolarships: JSON.stringify(scolarships)
+        },
+        success: res => {
+            console.log(res);
+        },
+        error: err => {
+            console.log(err);
+        }
+    })
 }
