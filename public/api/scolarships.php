@@ -9,6 +9,11 @@ session_start();
 
 if(isset($_SESSION['correo_usuario']) && $_SESSION['tipo_usuario'] == 1) {
     $scolarships = json_decode($_POST['scolarships']);
+    $deleted = json_decode($_POST['deleted']);
+
+    foreach($deleted as $del) {
+        $scolarship = App\Entities\CurriculumEscolaridad::where('id_escolar', $del)->delete();
+    }
     
     foreach($scolarships as $scolarship) {
         $escolaridad = new App\Entities\CurriculumEscolaridad;
