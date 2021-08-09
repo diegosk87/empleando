@@ -112,7 +112,9 @@ include 'templates/header.php';
         <form id="form_escolaridad" method="POST" onsubmit="saveScolarships(this, event)">
             <div class="container-datos-escolares datos-form" id="datos-escolares">
                 <header class="cabecera">
-                    <div class="legend"><legend>Escolaridad</legend></div>
+                    <div class="legend">
+                        <legend>Escolaridad</legend>
+                    </div>
                     <div class="fas-icon">
                         <i class="fas fa-minus fa5minus"></i>
                         <i class="fas fa-pen fa5plus"></i>
@@ -122,46 +124,46 @@ include 'templates/header.php';
                 <div class="row form-group contEscolaridad" id="contenedorEscolaridad">
                     <div class="row col-md-12 form-group" id="container-institucion">
                         <?php foreach ($usuario->escolaridades as $escolaridad) { ?>
-                        <div class="col-md-12 mb-3 mb-md-0 row">
-                            <input name="id_escolar" type="hidden" value="<?= $escolaridad->id_escolar ?>">
-                            <div class="col-md-12 mb-3 mb-md-0">
-                                <label for="userForm" class="text-black">Escolaridad</label>
-                                <select name="escolaridad" id="escolaridad" class="form-control" required>
-                                    <option value="">Seleccionar</option>
-                                    <option <?= $escolaridad->escolaridad != "Primaria" ? "" : "selected" ?>>Primaria</option>
-                                    <option <?= $escolaridad->escolaridad != "Secundaria" ? "" : "selected" ?>>Secundaria</option>
-                                    <option <?= $escolaridad->escolaridad != "Bachillerato" ? "" : "selected" ?>>Bachillerato</option>
-                                    <option <?= $escolaridad->escolaridad != "Educación Profesional Técnica" ? "" : "selected" ?>>Educación Profesional Técnica</option>
-                                    <option <?= $escolaridad->escolaridad != "Licenciatura Concluida" ? "" : "selected" ?>>Licenciatura Concluida</option>
-                                    <option <?= $escolaridad->escolaridad != "Licenciatura Trunca" ? "" : "selected" ?>>Licenciatura Trunca</option>
-                                    <option <?= $escolaridad->escolaridad != "Ingeniería Concluida" ? "" : "selected" ?>>Ingeniería Concluida</option>
-                                    <option <?= $escolaridad->escolaridad != "Ingeniería Trunca" ? "" : "selected" ?>>Ingeniería Trunca</option>
-                                    <option <?= $escolaridad->escolaridad != "Maestria" ? "" : "selected" ?>>Maestria</option>
-                                    <option <?= $escolaridad->escolaridad != "Doctorado" ? "" : "selected" ?>>Doctorado</option>
-                                </select>
-                            </div>
-
-                            <div class="col-md-12">
-                                <label class="text-black" for="userForm">Institución</label>
-                                <input type="text" id="institucion" value="<?= $escolaridad->institucion ?>" name="institucion" class="form-control" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="userForm">Inicio</label>
-                                <input type="date" id="FechaIni_esco" value="<?= $escolaridad->FechaIni_esco ?>" name="FechaIni_esco" class="form-control" required>
-                            </div>
-                            <div class="col-md-3">
-                                <label for="userForm">Final</label>
-                                <input class="form-control" id="FechaFin_esco" value="<?= $escolaridad->FechaFin_esco ?>" type="date" name="FechaFin_esco" required>
-                            </div>
-
-                            <div class="col-md-12 form-group row justify-content-center">
-                                <div class="form-check">
-                                    <input name="EnCurso" type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Cursando Actualmente</label>
+                            <div class="col-md-12 mb-3 mb-md-0 row">
+                                <input name="id_escolar" type="hidden" value="<?= $escolaridad->id_escolar ?>">
+                                <div class="col-md-12 mb-3 mb-md-0">
+                                    <label for="userForm" class="text-black">Escolaridad</label>
+                                    <select name="escolaridad" id="escolaridad" class="form-control" required>
+                                        <option value="">Seleccionar</option>
+                                        <option <?= $escolaridad->escolaridad != "Primaria" ? "" : "selected" ?>>Primaria</option>
+                                        <option <?= $escolaridad->escolaridad != "Secundaria" ? "" : "selected" ?>>Secundaria</option>
+                                        <option <?= $escolaridad->escolaridad != "Bachillerato" ? "" : "selected" ?>>Bachillerato</option>
+                                        <option <?= $escolaridad->escolaridad != "Educación Profesional Técnica" ? "" : "selected" ?>>Educación Profesional Técnica</option>
+                                        <option <?= $escolaridad->escolaridad != "Licenciatura Concluida" ? "" : "selected" ?>>Licenciatura Concluida</option>
+                                        <option <?= $escolaridad->escolaridad != "Licenciatura Trunca" ? "" : "selected" ?>>Licenciatura Trunca</option>
+                                        <option <?= $escolaridad->escolaridad != "Ingeniería Concluida" ? "" : "selected" ?>>Ingeniería Concluida</option>
+                                        <option <?= $escolaridad->escolaridad != "Ingeniería Trunca" ? "" : "selected" ?>>Ingeniería Trunca</option>
+                                        <option <?= $escolaridad->escolaridad != "Maestria" ? "" : "selected" ?>>Maestria</option>
+                                        <option <?= $escolaridad->escolaridad != "Doctorado" ? "" : "selected" ?>>Doctorado</option>
+                                    </select>
                                 </div>
-                                <div class="btn btn-sm btn-danger ml-3" onclick="removeScolarships(this, <?= $escolaridad->id_escolar ?>)">Eliminar</div>
+
+                                <div class="col-md-12">
+                                    <label class="text-black" for="userForm">Institución</label>
+                                    <input type="text" id="institucion" value="<?= $escolaridad->institucion ?>" name="institucion" class="form-control" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="userForm">Inicio</label>
+                                    <input type="date" id="FechaIni_esco" value="<?= $escolaridad->FechaIni_esco ?>" name="FechaIni_esco" class="form-control" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="userForm">Final</label>
+                                    <input class="form-control" id="FechaFin_esco" value="<?= $escolaridad->FechaFin_esco ?>" type="date" name="FechaFin_esco" required>
+                                </div>
+
+                                <div class="col-md-12 form-group row justify-content-center">
+                                    <div class="form-check">
+                                        <input name="EnCurso" type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Cursando Actualmente</label>
+                                    </div>
+                                    <div class="btn btn-sm btn-danger ml-3" onclick="removeScolarships(this, <?= $escolaridad->id_escolar ?>)">Eliminar</div>
+                                </div>
                             </div>
-                        </div>
                         <?php } ?>
                     </div>
                     <div class="row col-md-12 justify-content-center">
@@ -190,49 +192,49 @@ include 'templates/header.php';
                 </header>
 
                 <div class="datos-laborales" id="datos-laborales">
-                    <?php foreach($usuario->trabajos as $trabajo) { ?>
-                    <div class="row form-group mb-4" id="trabajos">
-                        <input name="id_laboral" type="hidden" value="<?= $trabajo->id_laboral ?>">
-                        <div class="col-md-12">
-                            <label class="text-black" for="userForm"> Empresa</label>
-                            <input type="text" name="empresa" class="form-control" value="<?= $trabajo->empresa ?>" required></input>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="userForm" class="text-black">Puesto / Cargo</label>
-                            <input type="text" name="puestos" class="form-control" value="<?= $trabajo->puestos ?>" required></input>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="userForm">Fecha de inicio</label>
-                            <input type="date" name="FechaIni" class="form-control" value="<?= $trabajo->FechaIni ?>" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="userForm">Fecha de Salida</label>
-                            <input type="date" name="FechaFin" class="form-control" value="<?= $trabajo->FechaFin ?>" required>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label for="">Estado</label>
-                            <div class="input-group col-mb-3">
-                                <div class="input-group-prepend">
-
-                                    <div class="input-group-text">
-                                        <input type="checkbox" <?= $trabajo->estado_status != 1 ? "" : "checked" ?> aria-label="Checkbox for following text input">
-                                    </div>
-                                </div>
-                                <input type="text" name="estado_status" value="Actualmente" disabled>
+                    <?php foreach ($usuario->trabajos as $trabajo) { ?>
+                        <div class="row form-group mb-4" id="trabajos">
+                            <input name="id_laboral" type="hidden" value="<?= $trabajo->id_laboral ?>">
+                            <div class="col-md-12">
+                                <label class="text-black" for="userForm"> Empresa</label>
+                                <input type="text" name="empresa" class="form-control" value="<?= $trabajo->empresa ?>" required></input>
                             </div>
-                        </div>
+                            <div class="col-md-12">
+                                <label for="userForm" class="text-black">Puesto / Cargo</label>
+                                <input type="text" name="puestos" class="form-control" value="<?= $trabajo->puestos ?>" required></input>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="userForm">Fecha de inicio</label>
+                                <input type="date" name="FechaIni" class="form-control" value="<?= $trabajo->FechaIni ?>" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="userForm">Fecha de Salida</label>
+                                <input type="date" name="FechaFin" class="form-control" value="<?= $trabajo->FechaFin ?>" required>
+                            </div>
 
-                        <div class="md-form col-md-12">
-                            <br>
-                            <textarea name="actividades" class="form-control" placeholder="Actividades" rows="5" required>
+                            <div class="col-md-4">
+                                <label for="">Estado</label>
+                                <div class="input-group col-mb-3">
+                                    <div class="input-group-prepend">
+
+                                        <div class="input-group-text">
+                                            <input type="checkbox" <?= $trabajo->estado_status != 1 ? "" : "checked" ?> aria-label="Checkbox for following text input">
+                                        </div>
+                                    </div>
+                                    <input type="text" name="estado_status" value="Actualmente" disabled>
+                                </div>
+                            </div>
+
+                            <div class="md-form col-md-12">
+                                <br>
+                                <textarea name="actividades" class="form-control" placeholder="Actividades" rows="5" required>
                                 <?= $trabajo->actividades ?>    
                             </textarea>
-                            <center>
-                                <div class="btn btn-sm btn-danger ml-3" onclick="removeJob(this, <?= $trabajo->id_laboral ?>)">Eliminar</div>
-                            </center>
+                                <center>
+                                    <div class="btn btn-sm btn-danger ml-3" onclick="removeJob(this, <?= $trabajo->id_laboral ?>)">Eliminar</div>
+                                </center>
+                            </div>
                         </div>
-                    </div>
                     <?php } ?>
                 </div>
                 <div class="row col-md-12 justify-content-center">
@@ -258,11 +260,12 @@ include 'templates/header.php';
                 </div>
             </header>
 
-
-            <div class="datos-complementarios">
-                <div class="lenguajes" id="lenguajes">
-                    <form id="skillajax" method="POST">
+            <form id="skillajax" method="POST" onsubmit="saveLanguage(this, event); saveCerts(this, event);">
+                <div class="datos-complementarios">
+                    <div class="lenguajes" id="lenguajes">
+                        <?php foreach ($usuario->idiomas as $idioma) { ?>
                             <div class="row form-group mb-4" id="contenedor-complementarios">
+                                <input name="id_idioma_habilidad" type="hidden" value="<?= $idioma->id_idioma_habilidad ?>">
                                 <div class="col-xl-6 col-md-12">
                                     <label for="userForm"> Idiomas</label>
                                     <div class="input-group mb-3">
@@ -271,22 +274,22 @@ include 'templates/header.php';
 
                                             </div>
                                         </div>
-                                        <select class="form-control" aria-label="Text input with checkbox" id="idioma_primario" name="idioma_primario" requiered>
+                                        <select class="form-control" aria-label="Text input with checkbox" id="idioma_primario" name="idioma_primario" value="<?= $idioma->idioma_primario ?>" requiered>
                                             <option value="">Seleccionar</option>
-                                            <option value="Aleman">Aleman</option>
-                                            <option value="Chino">Chino</option>
-                                            <option value="Frances">Frances</option>
-                                            <option value="Ingles">Ingles</option>
-                                            <option value="Japones">Japones</option>
-                                            <option value="Portugues">Portugues</option>
-                                            <option value="Ruso">Ruso</option>
+                                            <option <?= $idioma->idioma_primario != "Aleman" ? "" : "selected" ?>>Aleman</option>
+                                            <option <?= $idioma->idioma_primario != "Chino" ? "" : "selected" ?>>Chino</option>
+                                            <option <?= $idioma->idioma_primario != "Frances" ? "" : "selected" ?>>Frances</option>
+                                            <option <?= $idioma->idioma_primario != "Ingles" ? "" : "selected" ?>>Ingles</option>
+                                            <option <?= $idioma->idioma_primario != "Japones" ? "" : "selected" ?>>Japones</option>
+                                            <option <?= $idioma->idioma_primario != "Portugues" ? "" : "selected" ?>>Portugues</option>
+                                            <option <?= $idioma->idioma_primario != "Ruso" ? "" : "selected" ?>>Ruso</option>
                                         </select>
-                                        <select class="form-control" aria-label="Text input " id="idioma_prim_dominio" name="idioma_prim_dominio">
+                                        <select class="form-control" aria-label="Text input " id="idioma_prim_dominio" name="idioma_prim_dominio" value="<?= $idioma->idioma_prim_dominio ?>">
                                             <option value="">Seleccionar</option>
-                                            <option value="Basico">Basico</option>
-                                            <option value="Intermedio">Intermedio</option>
-                                            <option value="Avanzado">Avanzado</option>
-                                            <option value="Nativo">Nativo</option>
+                                            <option <?= $idioma->idioma_prim_dominio != "Basico" ? "" : "selected" ?>>Basico</option>
+                                            <option <?= $idioma->idioma_prim_dominio != "Intermedio" ? "" : "selected" ?>>Intermedio</option>
+                                            <option <?= $idioma->idioma_prim_dominio != "Avanzado" ? "" : "selected" ?>>Avanzado</option>
+                                            <option <?= $idioma->idioma_prim_dominio != "Nativo" ? "" : "selected" ?>>Nativo</option>
                                         </select>
                                     </div>
                                     <div class="input-group mb-3">
@@ -295,22 +298,22 @@ include 'templates/header.php';
 
                                             </div>
                                         </div>
-                                        <select class="form-control" aria-label="Text input with checkbox" id="idioma_secundario" name="idioma_secundario">
+                                        <select class="form-control" aria-label="Text input with checkbox" id="idioma_secundario" name="idioma_secundario" value="<?= $idioma->idioma_secundario ?>">
                                             <option value="">Seleccionar</option>
-                                            <option value="Aleman">Aleman</option>
-                                            <option value="Chino">Chino</option>
-                                            <option value="Frances">Frances</option>
-                                            <option value="Ingles">Ingles</option>
-                                            <option value="Japones">Japones</option>
-                                            <option value="Portugues">Portugues</option>
-                                            <option value="Ruso">Ruso</option>
+                                            <option <?= $idioma->idioma_secundario != "Aleman" ? "" : "selected" ?>>Aleman</option>
+                                            <option <?= $idioma->idioma_secundario != "Chino" ? "" : "selected" ?>>Chino</option>
+                                            <option <?= $idioma->idioma_secundario != "Frances" ? "" : "selected" ?>>Frances</option>
+                                            <option <?= $idioma->idioma_secundario != "Ingles" ? "" : "selected" ?>>Ingles</option>
+                                            <option <?= $idioma->idioma_secundario != "Japones" ? "" : "selected" ?>>Japones</option>
+                                            <option <?= $idioma->idioma_secundario != "Portugues" ? "" : "selected" ?>>Portugues</option>
+                                            <option <?= $idioma->idioma_secundario != "Ruso" ? "" : "selected" ?>>Ruso</option>
                                         </select>
-                                        <select class="form-control" aria-label="Text input with checkbox" name="idioma_sec_dominio" id="idioma_sec_dominio">
+                                        <select class="form-control" aria-label="Text input with checkbox" name="idioma_sec_dominio" id="idioma_sec_dominio" value="<?= $idioma->idioma_sec_dominio ?>">
                                             <option value="">Seleccionar</option>
-                                            <option value="Basico">Basico</option>
-                                            <option value="Intermedio">Intermedio</option>
-                                            <option value="Avanzado">Avanzado</option>
-                                            <option value="Nativo">Nativo</option>
+                                            <option <?= $idioma->idioma_sec_dominio != "Basico" ? "" : "selected" ?>>Basico</option>
+                                            <option <?= $idioma->idioma_sec_dominio != "Intermedio" ? "" : "selected" ?>>Intermedio</option>
+                                            <option <?= $idioma->idioma_sec_dominio != "Avanzado" ? "" : "selected" ?>>Avanzado</option>
+                                            <option <?= $idioma->idioma_sec_dominio != "Nativo" ? "" : "selected" ?>>Nativo</option>
                                         </select>
                                     </div>
                                 </div>
@@ -320,100 +323,109 @@ include 'templates/header.php';
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
-                                                <input type="text" id="habilidad_1" names="habilidad_1" placeholder="Escriba su habilidad" required></input>
+                                                <input type="text" id="habilidad_1" names="habilidad_1" placeholder="Escriba su habilidad" value="<?= $idioma->habilidad_1 ?>" required></input>
                                             </div>
                                         </div>
 
-                                        <select class="form-control" aria-label="Text input with checkbox" name="habilidad_1_nivel" id="habilidad_1_nivel" required>
+                                        <select class="form-control" aria-label="Text input with checkbox" name="habilidad_1_nivel" id="habilidad_1_nivel" value="<?= $idioma->habilidad_1_nivel ?>" required>
 
                                             <option value="">Seleccionar</option>
-                                            <option value="Basico">Basico</option>
-                                            <option value="Intermedio">Intermedio</option>
-                                            <option value="Avanzado">Avanzado</option>
-                                            <option value="Nativo">Nativo</option>
+                                            <option <?= $idioma->habilidad_1_nivel != "Basico" ? "" : "selected" ?>>Basico</option>
+                                            <option <?= $idioma->habilidad_1_nivel != "Intermedio" ? "" : "selected" ?>>Intermedio</option>
+                                            <option <?= $idioma->habilidad_1_nivel != "Avanzado" ? "" : "selected" ?>>Avanzado</option>
+                                            <option <?= $idioma->habilidad_1_nivel != "Nativo" ? "" : "selected" ?>>Nativo</option>
                                         </select>
                                     </div>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
-                                                <input type="text" name="habilidad_2" id="habilidad_2" placeholder="Escriba su habilidad" required></input>
+                                                <input type="text" name="habilidad_2" id="habilidad_2" placeholder="Escriba su habilidad" value="<?= $idioma->habilidad_2 ?>" required></input>
                                             </div>
                                         </div>
 
-                                        <select class="form-control" aria-label="Text input with checkbox" name="habilidad_2_nivel" id="habilidad_2_nivel" required>
+                                        <select class="form-control" aria-label="Text input with checkbox" name="habilidad_2_nivel" id="habilidad_2_nivel" value="<?= $idioma->habilidad_2_nivel ?>" required>
 
                                             <option value="">Seleccionar</option>
-                                            <option value="Basico">Basico</option>
-                                            <option value="Intermedio">Intermedio</option>
-                                            <option value="Avanzado">Avanzado</option>
-                                            <option value="Nativo">Nativo</option>
+                                            <option <?= $idioma->habilidad_2_nivel != "Basico" ? "" : "selected" ?>>Basico</option>
+                                            <option <?= $idioma->habilidad_2_nivel != "Intermedio" ? "" : "selected" ?>>Intermedio</option>
+                                            <option <?= $idioma->habilidad_2_nivel != "Avanzado" ? "" : "selected" ?>>Avanzado</option>
+                                            <option <?= $idioma->habilidad_2_nivel != "Nativo" ? "" : "selected" ?>>Nativo</option>
                                         </select>
                                     </div>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
-                                                <input type="text" id="habilidad_3" name="habilidad_3" placeholder="Escriba su habilidad" required>
+                                                <input type="text" id="habilidad_3" name="habilidad_3" placeholder="Escriba su habilidad" value="<?= $idioma->habilidad_3 ?>" required>
                                             </div>
                                         </div>
 
-                                        <select class="form-control" aria-label="Text input with checkbox" name="habilidad_3_nivel" id="habilidad_3_nivel" required>
+                                        <select class="form-control" aria-label="Text input with checkbox" name="habilidad_3_nivel" id="habilidad_3_nivel" value="<?= $idioma->habilidad_3_nivel ?>" required>
 
                                             <option value="">Seleccionar</option>
-                                            <option value="Basico">Basico</option>
-                                            <option value="Intermedio">Intermedio</option>
-                                            <option value="Avanzado">Avanzado</option>
-                                            <option value="Nativo">Nativo</option>
+                                            <option <?= $idioma->habilidad_3_nivel != "Basico" ? "" : "selected" ?>>Basico</option>
+                                            <option <?= $idioma->habilidad_3_nivel != "Intermedio" ? "" : "selected" ?>>Intermedio</option>
+                                            <option <?= $idioma->habilidad_3_nivel != "Avanzado" ? "" : "selected" ?>>Avanzado</option>
+                                            <option <?= $idioma->habilidad_3_nivel != "Nativo" ? "" : "selected" ?>>Nativo</option>
                                         </select>
                                     </div>
                                 </div>
-                                <center> <div class="btn btn-sm btn-danger ml-3" onclick="">Eliminar</div> </center>
+                                <center>
+                                    <div class="btn btn-sm btn-danger ml-3" onclick="removeLanguage(this,<?= $idioma->id_idioma_habilidad ?>)">Eliminar</div>
+                                </center>
                             </div>
-                    </form>
-                </div> 
-                <div class="row col-md-12 justify-content-center">
-                    <div class="faMas" id="fa-plus-circle">
-                        <i class="fas fa-plus-circle" id="btnAgregarInstitucion" onclick="addNewLanguage()"></i><b>Agregar
-                            otra</b>
+                        <?php } ?>
                     </div>
-                </div>
-                           
-                <div class="col-xl-12 col-md-12" id="certificaciones">
-                    <label for="userForm"> Certificaciones</label>
-                        <div class="certs" id="certs">
-                            <div class="col-md-12">
-
-                                <input type="text" class="form-control" name="certificacion" placeholder="Nombre de la certificación">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input type="text" value="Fecha" disabled>
-                                        </div>
-                                        <br>
-                                    </div>
-                                    <input type="date" class="form-control" name="fecha">
-                                </div>
-                                <center> <div class="btn btn-sm btn-danger ml-3" onclick="">Eliminar</div> </center>
-                            </div>
-                        </div>
-
                     <div class="row col-md-12 justify-content-center">
                         <div class="faMas" id="fa-plus-circle">
-                            <i class="fas fa-plus-circle" id="btnAgregarInstitucion" onclick="addNewCert()"></i><b>Agregar
+                            <i class="fas fa-plus-circle" id="btnAgregarInstitucion" onclick="addNewLanguage()"></i><b>Agregar
                                 otra</b>
                         </div>
                     </div>
+
+
+
+                    <div class="col-xl-12 col-md-12" id="certificaciones">
+                        <label for="userForm"> Certificaciones</label>
+                        <div class="certs" id="certs">
+                            <?php foreach ($usuario->certificaciones as $certificacion) { ?>
+                                <div class="col-md-12">
+                                    <input name="id_certifi" type="hidden" value="<?= $certificacion->id_certifi ?>">
+                                    <input type="text" class="form-control" name="certificacion" placeholder="Nombre de la certificación" value="<?= $certificacion->certificacion ?>">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <input type="text" value="Fecha" disabled>
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <input type="date" class="form-control" name="fecha" value="<?= $certificacion->fecha ?>">
+                                    </div>
+                                    <center>
+                                        <div class="btn btn-sm btn-danger ml-3" onclick="removeCert(this, <?= $certificacion->id_certifi ?>)">Eliminar</div>
+                                    </center>
+                                </div>
+                            <?php } ?>
+                        </div>
+
+                        <div class="row col-md-12 justify-content-center">
+                            <div class="faMas" id="fa-plus-circle">
+                                <i class="fas fa-plus-circle" id="btnAgregarInstitucion" onclick="addNewCert()"></i><b>Agregar otra</b>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <br>
+                <div class="container-button boton-visualizar">
+                    <button class="btn btn-primary" name="insertarcv" type="submit">Guardar datos complementarios</button>
+                    <br><br>
+                    <a href="vista-previa.php"><input clas="btn-visualizar" type="button" value="Vista previa">
+
+                </div>
+                <br>
+            </form>
         </div>
 
-        <br>
-        <div class="container-button boton-visualizar">
-            <button class="btn btn-primary" name="insertarcv" type="submit">Guardar datos complementarios</button>
-            <br><br>                
-            <a href="vista-previa.php"><input clas="btn-visualizar" type="button" value="Vista previa">
-
-        </div>
-        <br>
     </main>
 </div>
 

@@ -24,8 +24,8 @@ if(isset($_SESSION['correo_usuario']) && $_SESSION['tipo_usuario'] == 1) {
         $empleo->actividades = $job->actividades;
         $empleo->estado_status = $job->estado_status;
         $empleo->save();
+        echo 'Trabajos guardadas';
     }
     
-    echo 'Trabajos guardadas';
 }
 else echo 'Error al guardar trabajos';

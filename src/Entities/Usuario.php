@@ -39,6 +39,14 @@ class Usuario extends Model {
     {
         return $this->hasMany('App\Entities\CurriculumLaboral','correo_usuario','correo_usuario');
     }
+
+    public function idiomas(){
+        return $this->hasMany('App\Entities\CurriculumIdiomaHabilidad','correo_usuario','correo_usuario');
+    }
+
+    public function certificaciones(){
+        return $this->hasMany('App\Entities\CurriculumCertificaciones','correo_usuario','correo_usuario');
+    }
 }
 
 

@@ -1,5 +1,7 @@
 var deletedScolarships = [];
 var deletedJobs = [];
+var deletedLanguages = [];
+var deletedCerts = [];
 
 function addNewScholarship() {
     $('#container-institucion').append(`
@@ -83,7 +85,7 @@ function addNewJob() {
             <div class="md-form col-md-12">
                 <br>
                 <textarea name="actividades" class="md-textarea form-control" placeholder="Actividades" rows="5" required></textarea>
-                <center><div class="btn btn-sm btn-danger ml-3" onclick="removeJob(this, <?= $empresa->id_laboral ?>)">Eliminar</div></center>
+                <center><div class="btn btn-sm btn-danger ml-3" onclick="$(this).parent().parent().parent().remove()">Eliminar</div></center>
             </div>
         </div>
     `);
@@ -92,6 +94,7 @@ function addNewJob() {
 function addNewLanguage(){
     $('#lenguajes').append(`
         <div class="row form-group mb-4" id="contenedor-complementarios">
+        <input name="id_idioma_habilidad" type="hidden" value="0">
                         <div class="col-xl-6 col-md-12">
                             <label for="userForm"> Idiomas</label>
                             <div class="input-group mb-3">
@@ -195,7 +198,7 @@ function addNewLanguage(){
                                 </select>
                             </div>
                         </div>
-                        <center> <div class="btn btn-sm btn-danger ml-3" onclick="">Eliminar</div> </center>
+                        <center> <div class="btn btn-sm btn-danger ml-3" onclick="$(this).parent().parent().remove()">Eliminar</div> </center>
         </div>
     `);
     console.log("nuevo campo de lenguaje agregado");
@@ -204,18 +207,18 @@ function addNewLanguage(){
 function addNewCert(){
     $('#certs').append(`
     <div class="col-md-12">
-
-    <input type="text" class="form-control" name="certificacion" placeholder="Nombre de la certificación">
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <div class="input-group-text">
-                <input type="text" value="Fecha" disabled>
+        <input name="id_certifi" type="hidden" value="0">
+        <input type="text" class="form-control" name="certificacion" placeholder="Nombre de la certificación">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <input type="text" value="Fecha" disabled>
+                </div>
+                <br>
             </div>
-            <br>
+            <input type="date" class="form-control" name="fecha">
         </div>
-        <input type="date" class="form-control" name="fecha">
-     </div>
-        <center> <div class="btn btn-sm btn-danger ml-3" onclick="">Eliminar</div> </center>
+        <center> <div class="btn btn-sm btn-danger ml-3" onclick="$(this).parent().parent().remove()">Eliminar</div> </center>
     </div>
     `);
 }
@@ -319,7 +322,117 @@ function saveJobs(form, e){
             }
         });
     }
+}
+
+function removeLanguage(target,id){
+    $(target).parent().parent().remove();
+    deletedLanguages.push(id);
+}
+
+function saveLanguage(form, e){
+    e.preventDefault();
+    var languages = [];
     
+    try {
+        for(let i = 0; i < form.idioma_primario.length; i++) {
+            var language = {idioma_primario : "", idioma_prim_dominio : "", idioma_secundario : "", idioma_sec_dominio : "", habilidad_1 : "" , habilidad_1_nivel : "",habilidad_2 : "" , habilidad_2_nivel : "",habilidad_3 : "" , habilidad_3_nivel : "" };
+            language.idioma_primario = form.idioma_primario[i].value;
+            language.idioma_prim_dominio = form.idioma_prim_dominio[i].value;
+            language.idioma_secundario = form.idioma_secundario[i].value;
+            language.idioma_sec_dominio = form.idioma_sec_dominio[i].value;
+            language.habilidad_1 = form.habilidad_1[i].value;
+            language.habilidad_1_nivel = form.habilidad_1_nivel[i].value;
+            language.habilidad_2 = form.habilidad_2[i].value;
+            language.habilidad_2_nivel = form.habilidad_2_nivel[i].value;
+            language.habilidad_3 = form.habilidad_3[i].value;
+            language.habilidad_3_nivel = form.habilidad_3_nivel[i].value;
+
+            if(form.id_idioma_habilidad[i].value == "0") languages.push(language);
+        }
+    } catch (err) {
+        var language = {idioma_primario : "", idioma_prim_dominio : "", idioma_secundario : "", idioma_sec_dominio : "", habilidad_1 : "" , habilidad_1_nivel : "",habilidad_2 : "" , habilidad_2_nivel : "",habilidad_3 : "" , habilidad_3_nivel : "" };
+        language.idioma_primario = form.idioma_primario.value;
+        language.idioma_prim_dominio = form.idioma_prim_dominio.value;
+        language.idioma_secundario = form.idioma_secundario.value;
+        language.idioma_sec_dominio = form.idioma_sec_dominio.value;
+        language.habilidad_1 = form.habilidad_1.value;
+        language.habilidad_1_nivel = form.habilidad_1_nivel.value;
+        language.habilidad_2 = form.habilidad_2.value;
+        language.habilidad_2_nivel = form.habilidad_2_nivel.value;
+        language.habilidad_3 = form.habilidad_3.value;
+        language.habilidad_3_nivel = form.habilidad_3_nivel.value;
+        
+
+        if(form.id_idioma_habilidad.value == "0") languages.push(language);
+    }
+
+    console.log(languages);
+
+    if(languages.length > 0 || deletedLanguages.length > 0) {
+        $.ajax({
+            type: 'POST',
+            url: 'api/languagesUser.php',
+            data: {
+                languages: JSON.stringify(languages),
+                deleted: JSON.stringify(deletedLanguages)
+            },
+            success: res => {
+                console.log(res);
+                alert('Idiomas guardados');
+            },
+            error: err => {
+                console.log(err);
+                alert('valio pito');
+            }
+        });
+    }
+}
+
+function removeCert(target,id){ 
+    $(target).parent().parent().remove();
+    deletedCerts.push(id);
+}
+
+function saveCerts(form, e){
+    e.preventDefault();
+    var certs = [];
+    
+    try {
+        for(let i = 0; i < form.certificacion.length; i++){
+            var cert = {certificacion : "", fecha : "" };
+            cert.certificacion = form.certificacion[i].value;
+            cert.fecha = form.fecha[i].value;
+            
+            if(form.id_certifi[i].value == "0") certs.push(cert);
+        }
+    } catch (err) {
+        var cert = {certificacion : "", fecha : "" };
+        cert.certificacion = form.certificacion.value;
+        cert.fecha = form.fecha.value;
+
+        if(form.id_certifi.value == "0") certs.push(cert);
+    }
+
+    console.log(certs);
+
+    if(certs.length > 0 || deletedCerts.length > 0) {
+        $.ajax({
+            type: 'POST',
+            url: 'api/certsUser.php',
+            data: {
+                certs: JSON.stringify(certs),
+                deleted: JSON.stringify(deletedCerts)
+            },
+            success: res => {
+                console.log(res);
+                alert('Certificaciones guardadas');
+            },
+            error: err => {
+                console.log(err);
+                alert('valio pito');
+            }
+        });
+    }
 }
 
 //mi cagada
