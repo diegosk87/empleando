@@ -38,7 +38,7 @@ include 'templates/business-header.php';
                         <td><?= $vacante->fecha_publicacion ?></td>
                         <td><?= $postulaciones ?>
                         </td>
-                        <td><a href="postulantes.php?IdVacante=<?= $vacante->IdVacante ?>" class="fas fa-eye"></i></td>
+                        <td><a href="postulantes.php?idVacant=<?= $vacante->IdVacante ?>" class="fas fa-eye"></i></td>
 
                     </tr>
 

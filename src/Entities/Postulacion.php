@@ -18,6 +18,10 @@ class Postulacion extends Model {
 
     public $timestamps = false;
 
+    public function usuario() {
+        return $this->hasOne('App\Entities\Usuario','correo_usuario','correo_usuario');
+    }
+
     public function vacante()
     {
         return $this->hasOne('App\Entities\Vacante','IdVacante','IdVacante');
