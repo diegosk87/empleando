@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="fonts/line-icons/style.css">
     <link rel="stylesheet" href="css/empresa/navbar.css">
+    <link rel="stylesheet" href="css/empresa/index.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -40,7 +41,7 @@
 
                 <ul clas="nav__ul">
                     <li class="nav__li"><a href="planesFacturas.html">Planes y facturas</a></li>
-                    <li class="nav__li"><a href="busquedacv.php">Busquedas de CV'S</a></li>
+                    <li class="nav__li"><a href="busqueda-cv.php">Busquedas de CV'S</a></li>
                     <li class="nav__li"><a href="vacantes.php">Publicar vacantes</a></li>
                     <li class="nav__li"><a href="mis-vacantes.php">Mis vacantes</a></li>
                 </ul>
