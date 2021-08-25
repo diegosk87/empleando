@@ -3,7 +3,7 @@ $title = "Empleando &mdash; - Encuentra el trabajo de tus sueños";
 include 'templates/business-header.php';
 ?>
 
-<form method="POST" action="funciones/publi_vacantes.php" enctype='multipart/form-data' class="p-4 border rounded formContainer" name="vacantes_form" id="vacantes_form">
+<form method="POST" action="store-vacant.php" enctype='multipart/form-data' class="p-4 border rounded formContainer" name="vacantes_form" id="vacantes_form">
 
     <div class="contenedor-vacantes container">
         <section class="header-info row">
@@ -30,8 +30,8 @@ include 'templates/business-header.php';
         <hr>
         <div class="confidencia alert alert-primary">
             <h4>Confidencial</h4>
-            <p><input type="radio" name="siconfidencial" id="checkbox1"><label for="checkbox1">Si</label>
-                <input type="radio" name="noconfidencial" id="checkbox2"><label for="checkbox2">No</label>
+            <p><input type="radio" id="checkbox1"><label for="checkbox1">Si</label>
+                <input type="radio" id="checkbox2"><label for="checkbox2">No</label>
             </p>
         </div>
         <hr>
@@ -80,7 +80,7 @@ include 'templates/business-header.php';
 
                     <div class="areas col-md-6">
                         <label class="text-black" for="">Categoria:</label>
-                        <select name="Municipio" id="" class=" form-control" required>
+                        <select name="categoria" id="" class=" form-control" required>
                             <option value="">Seleccionar</option>
                             <option value="Administración">Administración</option>
                             <option value="Aduana y comercio Exterior">Aduana y comercio Exterior</option>
