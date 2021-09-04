@@ -11,7 +11,6 @@ include 'templates/business-header.php';
     <br>
     <br>
     <div class="informacionCandidatos">
-        <h1>ASDASD</h1>
 
         <table class="table">
             <thead class="thead-dark">
